@@ -5,16 +5,16 @@ export (int) var speed = 100
 var velocity = Vector2()
 var is_moving
 var current_direction
-var Global
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Global = get_tree().get_current_scene().get_node("Global")
 	current_direction = "walk_down"
 	set_current_item_icon(null)
 	
 	$DayNightLantern.play("DayNightLantern")
+	$Ambiance.show()
+	$CanvasModulate.show()
 
 func get_input():
 	velocity = Vector2()
@@ -65,7 +65,7 @@ func set_current_item_icon(item):
 		$Icon.hide()
 
 func _physics_process(_delta):
-	$DayNightLantern.seek(Global.time.get_decimal_hours(), true)
+	$DayNightLantern.seek(G.time.get_decimal_hours(), true)
 	get_input()
 	velocity = move_and_slide(velocity)
 	

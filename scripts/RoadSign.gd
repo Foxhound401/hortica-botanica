@@ -30,5 +30,5 @@ func action():
 	get_node("SignInfo").show()
 	yield(get_tree().create_timer(3), "timeout")
 	get_node("SignInfo").hide()
-	get_node("Area2D").reset_cooldown()
+	#get_node("Area2D").reset_cooldown()
 

@@ -11,12 +11,10 @@ export(PackedScene) var window_scene
 var inv_struct_list := Array()
 var inv_amount_list := Array()
 var interactor = get_parent()
-var Global
 var window_ref # Type: Inventory Window (setting in toggle_window())
 
 
 func _ready():
-	Global = get_tree().get_current_scene().get_node("Global")
 	prepare_inventory()
 	if start_items.size() == start_items_amount.size() and start_items.size() > 0:
 		add_starting_items()
@@ -149,8 +147,7 @@ func toggle_window():
 		hide_window()
 
 func show_window():
-	var player = Global.player
-	interactor = player
+	interactor = G.player
 	var new_window = window_scene.instance()
 	new_window.inv_comp = self
 	interactor.gui.add_child(new_window)

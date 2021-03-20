@@ -1,13 +1,12 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=22 format=2]
 
-[ext_resource path="res://Global.tscn" type="PackedScene" id=1]
+[ext_resource path="res://levels/LevelManger.gd" type="Script" id=1]
 [ext_resource path="res://assets/interiors/wood_interiors.png" type="Texture" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://PlayerPhysicBody.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/floors/HouseTilesTilset.tres" type="TileSet" id=5]
 [ext_resource path="res://Inventory/Items/Item_Apple.gd" type="Script" id=6]
 [ext_resource path="res://Inventory/Items/ItemPicker.tscn" type="PackedScene" id=7]
-[ext_resource path="res://TimeKeeper.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/BackOverworld.gd" type="Script" id=9]
 [ext_resource path="res://assets/buildings/BackDoor.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/furnitures/PlayerBed.tscn" type="PackedScene" id=11]
@@ -63,13 +62,10 @@ extents = Vector2( 32, 72 )
 extents = Vector2( 16, 144 )
 
 [node name="PlayerHouse" type="Node2D"]
+script = ExtResource( 1 )
 __meta__ = {
 "_edit_horizontal_guides_": [ -336.0 ]
 }
-
-[node name="Global" parent="." instance=ExtResource( 1 )]
-
-[node name="TimeKeeper" parent="Global" instance=ExtResource( 8 )]
 
 [node name="Player" parent="." instance=ExtResource( 3 )]
 
@@ -119,12 +115,6 @@ position = Vector2( -72, 192 )
 [node name="ItemPicker" parent="MapObjects" instance=ExtResource( 7 )]
 position = Vector2( 176, 40 )
 directory = ExtResource( 6 )
-
-[node name="PlayerHouseInsideDoor" parent="MapObjects" instance=ExtResource( 10 )]
-position = Vector2( -40, 192 )
-location_name = "Go Outside"
-level_to_load = "res://world.tscn"
-other_door = "PlayerHouseDoor"
 
 [node name="PlayerBed" parent="MapObjects" instance=ExtResource( 11 )]
 position = Vector2( 424, -32 )
@@ -177,4 +167,17 @@ script = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="ProxyDoor" type="Node2D" parent="."]
+position = Vector2( -40, 208 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PlayerHouseInsideDoor" parent="ProxyDoor" instance=ExtResource( 10 )]
+location_name = "Outside"
+is_interactive = true
+level_to_load = "World.tscn"
+position_to_teleport = "PlayerHouseDoor"
+restricted_opening = false
 [connection signal="pressed" from="Button" to="Button" method="_on_Button_pressed"]

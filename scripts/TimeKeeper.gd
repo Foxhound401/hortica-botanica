@@ -1,12 +1,11 @@
 extends Node
 
+var dspeed
 var time_epoch
 var speed
 var counter = 0
 var seasons = ["spring", "summer", "harvest", "winter"]
 var days_name = ["Lunada", "Plutada", "Saturnada", "Mercuda", "Urada", "Sunada"] 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	time_epoch = 0
 	speed = 2.0
@@ -65,9 +64,9 @@ func restore(data):
 	time_epoch = data["time_epoch"]
 
 func _process(delta):
-	counter += delta * speed
+	dspeed = delta * speed
+	counter += dspeed
 	if counter >= 1:
 		counter = 0
 		time_epoch += 1
 
-	#print(days_name[get_week_days()])

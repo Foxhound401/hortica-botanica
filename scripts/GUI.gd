@@ -1,20 +1,18 @@
 extends CanvasLayer
 
 var last_modifier = null
-var Global
 var refresh_time
 
 func _ready():
 	refresh_time = 0
-	Global = get_tree().get_current_scene().get_node("Global")
 	$TextInstructions.hide()
 
 func _process(delta):
 	refresh_time += delta
 	if refresh_time > 0.5:
-		$HoursLabel.text = Global.time.get_hours_as_string()
-		$DayLabel.text = Global.time.get_day_as_string()
-		$SeasonLabel.text = Global.time.get_season_as_string()
+		$HoursLabel.text = G.time.get_hours_as_string()
+		$DayLabel.text = G.time.get_day_as_string()
+		$SeasonLabel.text = G.time.get_season_as_string()
 		refresh_time = 0
 
 func reset_instructions(modifier):
@@ -29,19 +27,23 @@ func set_instructions(text, modifier):
 	last_modifier = modifier.i_hash_id
 
 func _on_Button_pressed():
-	Global.save_game()
+	G.fileio.save_game()
 
 
 func _on_Button2_pressed():
-	Global.restore_game()
+	G.fileio.restore_game()
 
 
 func _on_TimeFast_pressed():
-	Global.time.speed = 8.0
+	G.time.speed = 8.0
 
 func _on_TimeNormal_pressed():
-	Global.time.speed = 2.0
+	G.time.speed = 2.0
 
 
 func _on_TimeFaster_pressed():
-	Global.time.speed = 32.0
+	G.time.speed = 32.0
+
+
+func _on_TimeAddDay_pressed():
+	G.time.time_epoch += 720

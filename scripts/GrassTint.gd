@@ -1,11 +1,9 @@
 extends TileMap
 
-var Global
 var image
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	Global = get_tree().get_current_scene().get_node("Global")
 	#var image_texture = ImageTexture.new()
 	image = Image.new()
 	image.load('res://assets/gfx/grass_tint.png')
@@ -20,7 +18,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	var tint = Global.physical_player.position.y
+	var tint = G.physical_player.position.y
 	
 	tint = tint *0.1
 	

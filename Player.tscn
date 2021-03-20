@@ -58,7 +58,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button2" type="Button" parent="GUI"]
+[node name="ButtonRestore" type="Button" parent="GUI"]
 margin_left = 48.0
 margin_right = 90.0
 margin_bottom = 20.0
@@ -91,6 +91,15 @@ margin_left = 168.0
 margin_right = 196.0
 margin_bottom = 20.0
 text = ">>>"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeAddDay" type="Button" parent="GUI"]
+margin_left = 210.0
+margin_right = 246.0
+margin_bottom = 20.0
+text = "+0.5d"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -131,7 +140,8 @@ __meta__ = {
 
 [node name="Sprite2" type="Sprite" parent="GUI"]
 [connection signal="pressed" from="GUI/ButtonSave" to="GUI" method="_on_Button_pressed"]
-[connection signal="pressed" from="GUI/Button2" to="GUI" method="_on_Button2_pressed"]
+[connection signal="pressed" from="GUI/ButtonRestore" to="GUI" method="_on_Button2_pressed"]
 [connection signal="pressed" from="GUI/TimeNormal" to="GUI" method="_on_TimeNormal_pressed"]
 [connection signal="pressed" from="GUI/TimeFast" to="GUI" method="_on_TimeFast_pressed"]
 [connection signal="pressed" from="GUI/TimeFaster" to="GUI" method="_on_TimeFaster_pressed"]
+[connection signal="pressed" from="GUI/TimeAddDay" to="GUI" method="_on_TimeAddDay_pressed"]

@@ -24,7 +24,8 @@
 [ext_resource path="res://assets/plants/treetop.png" type="Texture" id=22]
 [ext_resource path="res://assets/terrains/grass_shades.png" type="Texture" id=25]
 [ext_resource path="res://scripts/GrassTint.gd" type="Script" id=26]
-[ext_resource path="res://TimeKeeper.tscn" type="PackedScene" id=27]
+[ext_resource path="res://time.tscn" type="PackedScene" id=27]
+
 
 [sub_resource type="TileSet" id=1]
 0/name = "grass_shades.png 0"

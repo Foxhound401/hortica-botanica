@@ -27,7 +27,7 @@ light_mask = 2
 position = Vector2( 0, -21 )
 texture = ExtResource( 1 )
 region_enabled = true
-region_rect = Rect2( 95, 15, 32, 48 )
+region_rect = Rect2( 64, 8, 32, 56 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

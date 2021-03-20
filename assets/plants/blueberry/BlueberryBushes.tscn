@@ -1,0 +1,35 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/plants/blueberry/blueberry_bushes.png" type="Texture" id=1]
+[ext_resource path="res://assets/plants/blueberry/blueberry_berry.png" type="Texture" id=2]
+[ext_resource path="res://scripts/BerryPicker.gd" type="Script" id=3]
+[ext_resource path="res://scripts/RoadSignEmit.gd" type="Script" id=4]
+[ext_resource path="res://assets/plants/blueberry/blueberry_bushes_winter.png" type="Texture" id=5]
+
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 18.0
+
+[node name="BlueberryBushes" type="Node2D" groups=[
+"PersistWorld",
+]]
+script = ExtResource( 3 )
+
+[node name="StaticBody2D" type="Area2D" parent="."]
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0, -7 )
+shape = SubResource( 1 )
+
+[node name="BushTree" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+offset = Vector2( 0, -12 )
+
+[node name="Bush" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+offset = Vector2( 0, -12 )
+
+[node name="Berry" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+offset = Vector2( 0, -12 )

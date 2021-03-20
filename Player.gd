@@ -3,14 +3,14 @@ extends Node
 
 export(NodePath) var gui_path = "GUI"
 var health := 100
-onready var gui = get_node(gui_path)
 
-var Global
 var select_slot = 0
 var current_item = null
+var gui = null
 
 func _ready():
-	Global = get_tree().get_current_scene().get_node("Global")
+	gui = $GUI
+	yield(get_tree().create_timer(0.001), "timeout")
 	$InventoryComponentQuickMenu.toggle_window()
 	$InventoryComponentQuickMenu.select_slot_at_index(0)
 	print("Ready player one")
@@ -42,13 +42,17 @@ func _input(event):
 func update_selected_slot():
 	$InventoryComponentQuickMenu.unselect_all_slots()
 	current_item = $InventoryComponentQuickMenu.select_slot_at_index(select_slot)
-	Global.physical_player.set_current_item_icon(current_item)
+	G.physical_player.set_current_item_icon(current_item)
+
+func add_to_inventory(item, amount):
+	print("item player", item)
+	return $InventoryComponentQuickMenu.add_to_inventory(item, amount)
 
 func _on_item_interacted(sender, item, amount):
-	if $InventoryComponentQuickMenu.add_to_inventory(item, amount):
+	if add_to_inventory(item, amount):
 		sender.queue_free()
 		current_item = $InventoryComponentQuickMenu.select_slot_at_index(select_slot)
-		Global.physical_player.set_current_item_icon(current_item)
+		G.physical_player.set_current_item_icon(current_item)
 
 func save():
 	var save_dict = {

@@ -7,11 +7,12 @@
 [ext_resource path="res://assets/floors/HouseTilesTilset.tres" type="TileSet" id=5]
 [ext_resource path="res://Inventory/Items/Item_Apple.gd" type="Script" id=6]
 [ext_resource path="res://Inventory/Items/ItemPicker.tscn" type="PackedScene" id=7]
-[ext_resource path="res://TimeKeeper.tscn" type="PackedScene" id=8]
+[ext_resource path="res://time.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scripts/BackOverworld.gd" type="Script" id=9]
 [ext_resource path="res://assets/buildings/BackDoor.tscn" type="PackedScene" id=10]
 [ext_resource path="res://assets/walls/WoodenWallsTilset.tres" type="TileSet" id=11]
 [ext_resource path="res://assets/furnitures/Clock.tscn" type="PackedScene" id=12]
+
 
 [sub_resource type="TileSet" id=1]
 0/name = "wood_interiors.png 0"
@@ -78,10 +79,11 @@ position = Vector2( 176, 40 )
 directory = ExtResource( 6 )
 
 [node name="GeneralStoreInsideDoor" parent="MapObjects" instance=ExtResource( 10 )]
-position = Vector2( -40, 192 )
 location_name = "Go Outside"
+is_interactive = true
 level_to_load = "res://world.tscn"
-other_door = "GeneralStoreDoor"
+position_to_teleport = ""
+restricted_opening = false
 
 [node name="Clock" parent="MapObjects" instance=ExtResource( 12 )]
 position = Vector2( -56, -96 )

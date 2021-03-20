@@ -15,5 +15,5 @@ func init(root):
 	yield(get_tree().create_timer(0.1), "timeout")
 	i_delayed_activation = true
 
-	var test = root.instructions
-	test = root.is_interactive
+	var _test = root.instructions
+	_test = root.is_interactive
