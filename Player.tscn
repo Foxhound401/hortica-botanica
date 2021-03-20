@@ -1,0 +1,137 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Inventory/InventoryComponent.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://Inventory/Other/ContainerQuickMenu.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/fonts/arcade-font.tres" type="DynamicFont" id=4]
+[ext_resource path="res://scripts/GUI.gd" type="Script" id=5]
+[ext_resource path="res://assets/gfx/ambiance_blue.png" type="Texture" id=6]
+
+[node name="Player" type="Node" groups=[
+"Persist",
+"Player",
+]]
+script = ExtResource( 2 )
+
+[node name="InventoryComponent" parent="." groups=[
+"Persist",
+] instance=ExtResource( 1 )]
+inv_name = "Backpack"
+inv_slots = 12
+
+[node name="InventoryComponentQuickMenu" parent="." groups=[
+"Persist",
+] instance=ExtResource( 1 )]
+inv_name = ""
+inv_slots = 6
+window_scene = ExtResource( 3 )
+
+[node name="GUI" type="CanvasLayer" parent="."]
+script = ExtResource( 5 )
+
+[node name="Sprite" type="Sprite" parent="GUI"]
+visible = false
+self_modulate = Color( 1, 1, 1, 0.215686 )
+position = Vector2( 320, 180 )
+scale = Vector2( 41, 23.5 )
+texture = ExtResource( 6 )
+
+[node name="TextInstructions" type="Label" parent="GUI"]
+visible = false
+margin_top = 344.0
+margin_right = 640.0
+margin_bottom = 358.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Instruction for Player"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonSave" type="Button" parent="GUI"]
+margin_right = 42.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 4 )
+text = "Save"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="Button" parent="GUI"]
+margin_left = 48.0
+margin_right = 90.0
+margin_bottom = 20.0
+custom_fonts/font = ExtResource( 4 )
+text = "Restore"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeNormal" type="Button" parent="GUI"]
+margin_left = 112.0
+margin_right = 124.0
+margin_bottom = 20.0
+text = ">"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeFast" type="Button" parent="GUI"]
+margin_left = 136.0
+margin_right = 156.0
+margin_bottom = 20.0
+text = ">>"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TimeFaster" type="Button" parent="GUI"]
+margin_left = 168.0
+margin_right = 196.0
+margin_bottom = 20.0
+text = ">>>"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HoursLabel" type="Label" parent="GUI"]
+margin_left = 592.0
+margin_right = 632.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 4 )
+text = "99:99"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DayLabel" type="Label" parent="GUI"]
+margin_left = 456.0
+margin_right = 504.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 4 )
+text = "Day: 00"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SeasonLabel" type="Label" parent="GUI"]
+margin_left = 520.0
+margin_right = 584.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 4 )
+text = "Summer"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite2" type="Sprite" parent="GUI"]
+[connection signal="pressed" from="GUI/ButtonSave" to="GUI" method="_on_Button_pressed"]
+[connection signal="pressed" from="GUI/Button2" to="GUI" method="_on_Button2_pressed"]
+[connection signal="pressed" from="GUI/TimeNormal" to="GUI" method="_on_TimeNormal_pressed"]
+[connection signal="pressed" from="GUI/TimeFast" to="GUI" method="_on_TimeFast_pressed"]
+[connection signal="pressed" from="GUI/TimeFaster" to="GUI" method="_on_TimeFaster_pressed"]

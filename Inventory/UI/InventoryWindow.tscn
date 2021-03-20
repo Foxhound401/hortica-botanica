@@ -1,0 +1,106 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Inventory/UI/InventoryWindow.gd" type="Script" id=1]
+[ext_resource path="res://Inventory/UI/ItemSlot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/fonts/medieval-font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/fonts/arcade-font.tres" type="DynamicFont" id=4]
+
+[node name="InventoryWindow" type="MarginContainer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -312.0
+margin_top = -172.0
+margin_right = 312.0
+margin_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+slot_scene = ExtResource( 2 )
+
+[node name="Background" type="ColorRect" parent="."]
+margin_right = 624.0
+margin_bottom = 280.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="UpperOverlay" type="Control" parent="Background"]
+anchor_right = 1.0
+anchor_bottom = 0.1
+size_flags_horizontal = 0
+size_flags_vertical = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryName" type="Label" parent="Background/UpperOverlay"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_top = 15.0
+grow_horizontal = 2
+custom_fonts/font = ExtResource( 3 )
+text = "Inventory Name"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CloseButton" type="Button" parent="Background/UpperOverlay"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -32.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = 32.0
+grow_horizontal = 0
+focus_mode = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+enabled_focus_mode = 0
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryGrid" type="GridContainer" parent="Background"]
+anchor_top = 0.05
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 48.0
+margin_top = 33.0
+margin_right = -176.0
+margin_bottom = -60.0
+custom_constants/vseparation = 0
+custom_constants/hseparation = 0
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryItemDescription" type="Label" parent="Background"]
+margin_left = 368.0
+margin_top = 64.0
+margin_right = 560.0
+margin_bottom = 176.0
+custom_fonts/font = ExtResource( 4 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryItemName" type="Label" parent="Background"]
+margin_left = 368.0
+margin_top = 48.0
+margin_right = 560.0
+margin_bottom = 64.0
+custom_fonts/font = ExtResource( 4 )
+custom_colors/font_color = Color( 0, 0.576471, 1, 1 )
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Background/UpperOverlay/CloseButton" to="." method="_on_CloseButton_pressed"]

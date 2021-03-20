@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/Doors.gd" type="Script" id=1]
+[ext_resource path="res://assets/gui/door_teleport_position.png" type="Texture" id=2]
+[ext_resource path="res://scripts/DoorSignEmit.gd" type="Script" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16, 6 )
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 19.0263
+
+[node name="BackDoor" type="Node2D" groups=[
+"Teleporter",
+]]
+position = Vector2( 0, -16 )
+script = ExtResource( 1 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0, 16 )
+shape = SubResource( 1 )
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, 16 )
+shape = SubResource( 2 )
+
+[node name="position_to_teleport" type="Sprite" parent="."]
+texture = ExtResource( 2 )

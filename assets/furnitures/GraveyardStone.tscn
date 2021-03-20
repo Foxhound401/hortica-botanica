@@ -1,0 +1,80 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/fonts/medieval-font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/furnitures/street_sign_arrows.png" type="Texture" id=2]
+[ext_resource path="res://assets/furnitures/stone_sign_background.png" type="Texture" id=3]
+[ext_resource path="res://assets/furnitures/grave_markers.png" type="Texture" id=4]
+[ext_resource path="res://scripts/RoadSign.gd" type="Script" id=5]
+[ext_resource path="res://scripts/RoadSignEmit.gd" type="Script" id=6]
+
+[sub_resource type="OccluderPolygon2D" id=1]
+polygon = PoolVector2Array( -16, -9, 16, -9, 16, 1, -16, 1 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 16, 6 )
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 19.0263
+
+[node name="GraveyardStone" type="Node2D"]
+script = ExtResource( 5 )
+instructions = "Press [E] to read"
+sign_text = "Lord Hurrey"
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+light_mask = 2
+position = Vector2( 0, -15 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 128, 192, 32, 32 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 0, -5 )
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 0, -6 )
+shape = SubResource( 3 )
+
+[node name="SignInfo" type="Node2D" parent="."]
+visible = false
+z_index = 100
+
+[node name="Sprite" type="Sprite" parent="SignInfo"]
+light_mask = 2
+position = Vector2( 0, -65 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="SignInfo"]
+margin_left = -64.0
+margin_top = -69.0
+margin_right = 64.0
+margin_bottom = -54.0
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Text"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ArrowRight" type="Sprite" parent="SignInfo"]
+position = Vector2( 58, -61 )
+rotation = 3.14159
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 6, 11 )
+
+[node name="ArrowLeft" type="Sprite" parent="SignInfo"]
+position = Vector2( -58, -61 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 6, 11 )

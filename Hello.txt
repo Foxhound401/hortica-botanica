@@ -1,0 +1,59 @@
+Hello
+
+LPC assets are so cool, honestly I think its one of the best "set/collection" that can be found on OGA. They are mostly compatible with each other, can be used and extended and have a great variety of biomes and environement. I feel it would be nice to have a game using them and putting them in a way that can easily be extended and modded by the community and would encourage people to create more content.
+
+Many games from the original game jam are not developed anymore and or have some annoying bugs. LPC deserve to have a cool open source showcase project.
+
+I did not wanted to create the classical open source medieval RPG / MMORPG for a few reasons:
+
+    I think its a theme that was used above and beyond
+    There are already a few RPG out there using LPC assets, and I wanted to try something new
+    This might be controversial but many open source project sadly use their own engine. Encyclopedia Hortica Botanica, should NOT use its own custom made engine. I would like to focus on creating an open source game not making yet another game engine.
+    The engine must be something wiidely used and with existing tutorials / ressources so people can join easily. I choose Godot because it has a very active community and is relatively easy / similar to unity engine and it can easily be extended / scripted if needed.
+    I also did not wanted to create a pure clone / reproduction of an existing game. We can create our own LPC universe and stories, lets not clone candy crush :P.
+    The visual quality should be not left behind.
+
+So what is the game?
+
+To not be yet another recruitement post asking for a team for 200 people and abandoning the project after 2 weeks, I already started working on a prototype for a few months during my free time.
+
+Encyclopdia Hortica Botanica is a crop / growing / farming simulator. In a way it is similar to the open valley project https://opengameart.org/forumtopic/open-valley-ideaproject#comment-90286 and maybe we could join forces, although mine is not a clone of a specific game (as stated in the design objectives I do not want to make a pure clone).
+
+The dark twist:
+
+You are a botanic student and you study plants, your goal is to grow stuff, experiment, create amazing, (and potentially dangerous) plants that might or might not invade and destroy your other crops. By upgrading your skills you can perform more advanced science and magic.
+
+Preview of the skill tree:
+
+The game uses 2D light and shadow with normal maps to create a sensation of depth. The idea is to get the best visual quality possible to offer an amazing showcase to assets used in game. While lights and shadows are quite advanced the game runs at the native resolution of 640x360 for an amazing pixel art look. Everything including this UI works at this resolution.
+
+
+Example of real time lights with trees in front of the light source being darker and the one in the back getting the light from the character. This is also be very useful in interior scenes
+
+So far this is what was done:
+
+    Inventory and backpack to pick, drag&drop and organize items
+    Dynamic lighting with normal maps, shadows and other light effects
+    A few interactive objects
+    Experimental level loading and save function
+
+And a prototype of corps:
+
+All assets so far come from OGA. Now some stuff was created by me but of course they will be released on OGA.
+
+What is coming next?
+
+    Save function must work
+    Prototype of player's house
+    Making dynamic lighting scale (some uses custom scripts to work).
+    Ability to grow one type of seed in a crop
+
+Anything beyond is pure speculation so I will not make a long term road map :p.
+
+Let me know what you think, if people are interested to contribute I can already put the git repository public. Idealy if someone is motivated and willing to help me It would be really nice, whatever its for developement or an artist.
+
+Sam
+
+
+
+stagging area / rttr
