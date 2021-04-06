@@ -1,0 +1,66 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/buildings/CottageTilset.tres" type="TileSet" id=1]
+[ext_resource path="res://assets/buildings/CottageRoofLightTilset.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/buildings/PipeAndGutterTilset.tres" type="TileSet" id=3]
+[ext_resource path="res://assets/furnitures/business_signs.png" type="Texture" id=4]
+[ext_resource path="res://assets/buildings/wood_door.png" type="Texture" id=5]
+[ext_resource path="res://assets/buildings/WoodSmallWindows.tscn" type="PackedScene" id=6]
+
+[node name="GeneralStore" type="Node2D"]
+
+[node name="Mainhouse" type="TileMap" parent="."]
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -327683, 0, 196614, -327682, 0, 196615, -327681, 0, 196616, -262148, 0, 196614, -262147, 0, 196611, -262146, 0, 196612, -262145, 0, 196613, -327680, 0, 196616, -196611, 0, 6, -196610, 0, 7, -196609, 0, 7, -131075, 0, 65542, -131074, 0, 65543, -131073, 0, 65543, -65539, 0, 3, -65538, 0, 1, -65537, 0, 1, -131072, 0, 1, -131071, 0, 1, -131070, 0, 1, -131069, 0, 1, -131068, 0, 1, -131067, 0, 1, -131066, 0, 1, -131065, 0, 5, -3, 0, 65539, -2, 0, 65537, -1, 0, 65537, -65536, 0, 65537, -65535, 0, 65537, -65534, 0, 65537, -65533, 0, 65537, -65532, 0, 65537, -65531, 0, 65537, -65530, 0, 65537, -65529, 0, 65541, 65533, 0, 655360, 65534, 0, 655361, 65535, 0, 655361, 0, 0, 655361, 1, 0, 655361, 2, 0, 655361, 3, 0, 983044, 4, 0, 983044, 5, 0, 655361, 6, 0, 655361, 7, 0, 655362 )
+
+[node name="WoodSmallWindows" parent="." instance=ExtResource( 6 )]
+position = Vector2( 0, -24 )
+
+[node name="WoodSmallWindows2" parent="." instance=ExtResource( 6 )]
+position = Vector2( -64, -24 )
+
+[node name="WoodSmallWindows3" parent="." instance=ExtResource( 6 )]
+position = Vector2( 64, -24 )
+
+[node name="WoodSmallWindows4" parent="." instance=ExtResource( 6 )]
+position = Vector2( 192, -24 )
+
+[node name="pipe2" type="TileMap" parent="."]
+position = Vector2( -8, -10 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -196606, 0, 458756, -196605, 0, 458757, -196594, 0, 458756, -196593, 0, 458757, -131070, 0, 393220, -131069, 0, 393221, -131058, 0, 458756, -131057, 0, 458757, -65534, 0, 458756, -65533, 0, 458757, -65522, 0, 524292, -65521, 0, 524293, 2, 0, 458756, 3, 0, 458757, 14, 0, 589828, 15, 0, 589829, 65538, 0, 458756, 65539, 0, 458757, 65550, 0, 458756, 65551, 0, 458757, 131074, 0, 4, 131075, 0, 5, 131086, 0, 4, 131087, 0, 5, 196610, 0, 65540, 196611, 0, 65541, 196622, 0, 65540, 196623, 0, 65541 )
+
+[node name="pipe" type="TileMap" parent="."]
+position = Vector2( -8, -10 )
+tile_set = ExtResource( 3 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( -196608, 0, 327680, -196607, 0, 327681, -196606, 0, 327680, -196605, 0, 327680, -196604, 0, 327681, -196603, 0, 327680, -196602, 0, 327680, -196601, 0, 327681, -196600, 0, 327680, -196599, 0, 327680, -196598, 0, 327681, -196597, 0, 327680, -196596, 0, 327680, -196595, 0, 327681, -196594, 0, 327680, -196593, 0, 327680, -196592, 0, 327681, -196591, 0, 327680 )
+
+[node name="roof" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -393216, 0, 14, -393215, 0, 15, -393214, 0, 14, -393213, 0, 14, -393212, 0, 15, -393211, 0, 14, -393210, 0, 15, -393209, 0, 14, -393208, 0, 393226, -327680, 0, 262151, -327679, 0, 262151, -327678, 0, 262151, -327677, 0, 262151, -327676, 0, 262151, -327675, 0, 262151, -327674, 0, 262151, -327673, 0, 262152, -327672, 0, 65542, -196609, 0, 131074, -262144, 0, 327687, -262143, 0, 327687, -262142, 0, 327687, -262141, 0, 327687, -262140, 0, 327687, -262139, 0, 327687, -262138, 0, 327687, -262137, 0, 327688, -262136, 0, 65542, -131073, 0, 131074, -196608, 0, 393223, -196607, 0, 393223, -196606, 0, 393223, -196605, 0, 393223, -196604, 0, 393223, -196603, 0, 393223, -196602, 0, 393223, -196601, 0, 393224, -196600, 0, 131078, -65537, 0, 196610, -131072, 0, 196611, -131071, 0, 196611, -131070, 0, 196612, -131069, 0, 196611, -131068, 0, 196612, -131067, 0, 196611, -131066, 0, 196611, -131065, 0, 196611, -131064, 0, 196614 )
+
+[node name="roof2" type="TileMap" parent="."]
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -458754, 0, 11, -393219, 0, 65546, -393218, 0, 65547, -393217, 0, 65548, -327684, 0, 131081, -327683, 0, 131082, -327682, 0, 131083, -327681, 0, 131084, -393216, 0, 131085, -262148, 0, 196617, -262147, 0, 196618, -262145, 0, 196620, -327680, 0, 196621 )
+
+[node name="GeneralStoreLogo" type="Sprite" parent="."]
+position = Vector2( -110, -90 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 128, 0, 32, 32 )
+
+[node name="Door" type="Sprite" parent="."]
+position = Vector2( 129, -8 )
+texture = ExtResource( 5 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 48 )

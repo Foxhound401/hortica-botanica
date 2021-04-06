@@ -33,7 +33,7 @@ _global_script_class_icons={
 [application]
 
 config/name="Tiny Garden 2.0"
-run/main_scene="res://levels/World.tscn"
+run/main_scene="res://levels/City.tscn"
 config/icon="res://icon.png"
 
 [autoload]

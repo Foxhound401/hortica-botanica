@@ -4,8 +4,12 @@ var dspeed
 var time_epoch
 var speed
 var counter = 0
-var seasons = ["spring", "summer", "harvest", "winter"]
+
+enum seasons {SPRING, SUMMER, HARVEST, WINTER}
+var season_names = ["Spring", "Summer", "Harvest", "Winter"]
+
 var days_name = ["Lunada", "Plutada", "Saturnada", "Mercuda", "Urada", "Sunada"] 
+
 func _ready():
 	time_epoch = 0
 	speed = 2.0
@@ -26,7 +30,15 @@ func get_week_days():
 	return int(time_epoch / 1440.0) % 6
 
 func get_season():
-	return (int(time_epoch / 1440.0) / 30) % 4
+	var season =  (int(time_epoch / 1440.0) / 30) % 4
+	if season == 0:
+		return seasons.SPRING
+	if season == 1:
+		return seasons.SUMMER
+	if season == 2:
+		return seasons.HARVEST
+	if season == 3:
+		return seasons.WINTER
 
 func is_day_or_night():
 	if get_decimal_hours() > 6.0 and get_decimal_hours() < 20.0:
@@ -51,7 +63,7 @@ func get_hours_as_string():
 	return output
 
 func get_season_as_string():
-	return seasons[get_season()]
+	return season_names[get_season()]
 
 func save():
 	var save_dict = {
@@ -61,6 +73,7 @@ func save():
 	return save_dict
 
 func restore(data):
+	print(get_season())
 	time_epoch = data["time_epoch"]
 
 func _process(delta):

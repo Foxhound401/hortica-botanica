@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scripts/Schedule.gd" type="Script" id=1]
+
+[node name="Schedule" type="Node"]
+script = ExtResource( 1 )
+time_schedule/time_open = 2
+time_schedule/time_close = 4
+day_schedule/open_on_lunada = false
+day_schedule/open_on_plutada = false
+day_schedule/open_on_saturnada = false
+day_schedule/open_on_mercuda = false
+day_schedule/open_on_urada = false
+day_schedule/open_on_sunada = true
+season_schedule/open_during_spring = true
+season_schedule/open_during_summer = true
+season_schedule/open_during_harvest = true
+season_schedule/open_during_winter = true

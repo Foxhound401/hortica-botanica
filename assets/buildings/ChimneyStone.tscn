@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/gfx/smoke_clouds.png" type="Texture" id=1]
+[ext_resource path="res://assets/buildings/chimney.png" type="Texture" id=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.463636, 1 )
+colors = PoolColorArray( 0, 0, 0, 0, 0, 0, 0, 0.592157, 0.556863, 0.556863, 0.556863, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+flag_disable_z = true
+spread = 28.34
+flatness = 0.09
+gravity = Vector3( 0, -98, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+radial_accel = -88.37
+angle = -312.6
+angle_random = 0.51
+scale = 0.9
+scale_random = 0.12
+color_ramp = SubResource( 2 )
+
+[node name="Chimney" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -147, -216 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 72, 32, 48 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+position = Vector2( -148, -230 )
+amount = 7
+lifetime = 3.0
+explosiveness = 0.05
+randomness = 0.19
+process_material = SubResource( 3 )
+texture = ExtResource( 1 )

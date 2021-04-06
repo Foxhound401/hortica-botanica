@@ -10,7 +10,7 @@ func _ready():
 	image.lock()
 
 	
-	modulate = image.get_pixel(0, 10)
+	#modulate = image.get_pixel(0, 10)
 	
   #image_texture.create_from_image(image, 0)
   #self.texture = image_texture
@@ -31,4 +31,4 @@ func _process(_delta):
 	if tint < 0:
 		tint = 0
 	
-	modulate = image.get_pixel(0, tint)
+	#modulate = image.get_pixel(0, tint)
