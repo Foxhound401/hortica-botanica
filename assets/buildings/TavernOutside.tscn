@@ -20,10 +20,10 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 112, 5 )
 
-[sub_resource type="RectangleShape2D" id=4]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 5, 29 )
 
-[sub_resource type="ParticlesMaterial" id=6]
+[sub_resource type="ParticlesMaterial" id=3]
 flag_disable_z = true
 gravity = Vector3( 0, 98, 0 )
 orbit_velocity = 0.0
@@ -46,6 +46,7 @@ format = 1
 tile_data = PoolIntArray( -458758, 0, 393225, -458757, 0, 14, -458756, 0, 14, -458755, 0, 14, -458754, 0, 14, -458753, 0, 14, -524288, 0, 14, -524287, 0, 14, -524286, 0, 14, -524285, 0, 14, -524284, 0, 15, -524283, 0, 14, -524282, 0, 393226, -393222, 0, 65538, -393221, 0, 262151, -393220, 0, 262151, -393219, 0, 262151, -393218, 0, 262151, -393217, 0, 262151, -458752, 0, 262151, -458751, 0, 262151, -458750, 0, 262151, -458749, 0, 262151, -458748, 0, 262151, -458747, 0, 262152, -458746, 0, 131078, -327686, 0, 65538, -327685, 0, 327687, -327684, 0, 327687, -327683, 0, 327687, -327682, 0, 327687, -327681, 0, 327687, -393216, 0, 327687, -393215, 0, 327687, -393214, 0, 327687, -393213, 0, 327687, -393212, 0, 327687, -393211, 0, 327688, -393210, 0, 131078, -262150, 0, 131074, -262149, 0, 393222, -262148, 0, 393223, -262147, 0, 393223, -262146, 0, 393223, -262145, 0, 393223, -327680, 0, 393223, -327679, 0, 393223, -327678, 0, 393223, -327677, 0, 393223, -327676, 0, 393223, -327675, 0, 393224, -327674, 0, 131078, -196614, 0, 196610, -196613, 0, 196611, -196612, 0, 196611, -196611, 0, 196611, -196610, 0, 196611, -196609, 0, 196611, -262144, 0, 196611, -262143, 0, 196611, -262142, 0, 196611, -262141, 0, 196611, -262140, 0, 196612, -262139, 0, 196612, -262138, 0, 196614 )
 
 [node name="Chimney" parent="Roof" instance=ExtResource( 16 )]
+position = Vector2( -138, -219 )
 
 [node name="RoofWindows" type="TileMap" parent="."]
 z_index = 20
@@ -158,15 +159,15 @@ shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 209, -35 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( -18, -35 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2( 239, -77 )
-shape = SubResource( 4 )
+shape = SubResource( 2 )
 
 [node name="Logo" type="Node2D" parent="."]
 position = Vector2( -39, 14 )
@@ -263,4 +264,4 @@ position = Vector2( 212, -120 )
 amount = 4
 lifetime = 0.7
 explosiveness = 0.1
-process_material = SubResource( 6 )
+process_material = SubResource( 3 )

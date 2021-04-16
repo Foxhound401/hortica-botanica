@@ -218,6 +218,10 @@ day_schedule/open_on_plutada = true
 day_schedule/open_on_saturnada = true
 day_schedule/open_on_mercuda = true
 day_schedule/open_on_urada = true
+day_schedule/open_on_sunada = false
+season_schedule/open_during_spring = false
+season_schedule/open_during_summer = false
+season_schedule/open_during_harvest = false
 
 [node name="GeneralStore" type="Node2D" parent="."]
 position = Vector2( -989, -186 )
