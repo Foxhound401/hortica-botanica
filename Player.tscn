@@ -105,8 +105,8 @@ __meta__ = {
 }
 
 [node name="HoursLabel" type="Label" parent="GUI"]
-margin_left = 592.0
-margin_right = 632.0
+margin_left = 664.0
+margin_right = 704.0
 margin_bottom = 14.0
 custom_fonts/font = ExtResource( 4 )
 text = "99:99"
@@ -117,8 +117,8 @@ __meta__ = {
 }
 
 [node name="DayLabel" type="Label" parent="GUI"]
-margin_left = 456.0
-margin_right = 504.0
+margin_left = 536.0
+margin_right = 584.0
 margin_bottom = 14.0
 custom_fonts/font = ExtResource( 4 )
 text = "Day: 00"
@@ -128,8 +128,8 @@ __meta__ = {
 }
 
 [node name="SeasonLabel" type="Label" parent="GUI"]
-margin_left = 520.0
-margin_right = 584.0
+margin_left = 584.0
+margin_right = 648.0
 margin_bottom = 14.0
 custom_fonts/font = ExtResource( 4 )
 text = "Summer"
@@ -139,6 +139,16 @@ __meta__ = {
 }
 
 [node name="Sprite2" type="Sprite" parent="GUI"]
+
+[node name="WeatherLabel" type="Label" parent="GUI"]
+margin_left = 456.0
+margin_right = 509.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 4 )
+text = "Weather"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="GUI/ButtonSave" to="GUI" method="_on_Button_pressed"]
 [connection signal="pressed" from="GUI/ButtonRestore" to="GUI" method="_on_Button2_pressed"]
 [connection signal="pressed" from="GUI/TimeNormal" to="GUI" method="_on_TimeNormal_pressed"]

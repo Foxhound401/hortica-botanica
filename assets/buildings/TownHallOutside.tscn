@@ -1,0 +1,109 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://assets/buildings/colonial.png" type="Texture" id=1]
+[ext_resource path="res://assets/gfx/PhysicWallTilset.tres" type="TileSet" id=2]
+
+[sub_resource type="TileSet" id=1]
+0/name = "colonial.png 0"
+0/texture = ExtResource( 1 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 1024, 1024 )
+0/tile_mode = 2
+0/autotile/icon_coordinate = Vector2( 0, 0 )
+0/autotile/tile_size = Vector2( 32, 32 )
+0/autotile/spacing = 0
+0/autotile/occluder_map = [  ]
+0/autotile/navpoly_map = [  ]
+0/autotile/priority_map = [  ]
+0/autotile/z_index_map = [  ]
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 7, 75 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 116, 7 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 25, 6 )
+
+[node name="TownHall" type="Node2D"]
+
+[node name="TileMap4" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -1, 0, 1376282, -65536, 0, 1376283, -65535, 0, 1376283, -65534, 0, 1376283, -65533, 0, 1376283, -65532, 0, 1376283, -65531, 0, 1376284, 65535, 0, 1441821, 0, 0, 1441822, 1, 0, 1441822, 2, 0, 1441822, 3, 0, 1441822, 4, 0, 1441822, 5, 0, 1441823, 131071, 0, 1441821, 65536, 0, 1441822, 65537, 0, 1441822, 65538, 0, 1441822, 65539, 0, 1441822, 65540, 0, 1441822, 65541, 0, 1441823, 196607, 0, 1441821, 131072, 0, 1441822, 131073, 0, 1441822, 131074, 0, 1441822, 131075, 0, 1441822, 131076, 0, 1441822, 131077, 0, 1441823, 262143, 0, 1507357, 196608, 0, 1441822, 196609, 0, 1638430, 196610, 0, 1638430, 196611, 0, 1638430, 196612, 0, 1441822, 196613, 0, 1507359, 327679, 0, 458753, 262144, 0, 458753, 262145, 0, 1769476, 262146, 0, 1769476, 262147, 0, 1769476, 262148, 0, 458753, 262149, 0, 458753 )
+
+[node name="TileMap2" type="TileMap" parent="."]
+visible = false
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 0, 0, 1048582, 4, 0, 1048584, 65536, 0, 1114116, 65540, 0, 1114116, 131072, 0, 1245188, 131076, 0, 1245188, 196608, 0, 1638422, 196612, 0, 1638420 )
+
+[node name="barrierfront" type="TileMap" parent="."]
+z_index = 20
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 65535, 0, 1572884, 5, 0, 1572886, 131071, 0, 1572884, 65541, 0, 1572886, 196607, 0, 1572884, 131077, 0, 1572886, 262143, 0, 1638420, 196608, 0, 1441819, 196612, 0, 1441818, 196613, 0, 1638422 )
+
+[node name="barrierback" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -1, 0, 1507348, -65536, 0, 1507349, -65535, 0, 1507349, -65534, 0, 1507349, -65533, 0, 1507349, -65532, 0, 1507349, -65531, 0, 1507350 )
+
+[node name="Building" type="TileMap" parent="."]
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 65537, 0, 1245212, 65538, 0, 1245213, 65539, 0, 1245214, 131073, 0, 1310748, 131074, 0, 1310749, 131075, 0, 1310750 )
+
+[node name="Roof" type="TileMap" parent="."]
+z_index = 20
+tile_set = SubResource( 1 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( -131071, 0, 1048604, -131070, 0, 1048605, -131069, 0, 1048606, -65535, 0, 1114140, -65534, 0, 1114141, -65533, 0, 1114142, 1, 0, 1179676, 2, 0, 1179677, 3, 0, 1179678 )
+
+[node name="Collisions" type="TileMap" parent="."]
+visible = false
+z_index = 40
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 65538, 0, 1, 65539, 0, 0, 65540, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 2, 131074, 0, 0, 131075, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 196610, 0, 0, 196611, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 196615, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 262150, 0, 0, 262151, 0, 0, 327682, 0, 3, 327683, 0, 0, 327686, 0, 0, 327687, 0, 4, 589822, 0, 0, 589823, 0, 0, 524288, 0, 0, 524289, 0, 0, 524296, 0, 0, 524297, 0, 0, 524298, 0, 0, 524299, 0, 0, 655358, 0, 0, 655359, 0, 0, 589824, 0, 0, 589825, 0, 0, 589832, 0, 0, 589833, 0, 0, 589834, 0, 0, 589835, 0, 0 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
+z_index = 50
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 189, 56 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -29, 56 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 80, -16 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( -2, 125 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2( 162, 125 )
+shape = SubResource( 4 )

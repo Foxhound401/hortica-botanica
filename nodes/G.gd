@@ -5,6 +5,7 @@ var physical_player
 var ui
 var time
 var fileio
+var weather
 var version
 var githash
 var save_version
@@ -18,6 +19,7 @@ func load_vars():
 	ui = get_tree().get_current_scene().get_node("Player/GUI")
 	time = $time
 	fileio = $fileio
+	weather = $weather
 	
 	var output = []
 	OS.execute( 'git', ['rev-parse', '--verify', 'HEAD'], true, output )

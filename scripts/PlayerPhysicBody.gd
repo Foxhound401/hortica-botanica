@@ -76,6 +76,24 @@ func _physics_process(_delta):
 		$ItemBobbingAnimation.stop()
 		$AnimatedSprite.play(current_direction + "_idle")
 
+func set_weather(weather):
+	# Reset weather
+	$Weather/Fog.hide()
+	$Weather/Rain.hide()
+	$Weather/Snow.hide()
+
+	if weather == G.weather.weather.SNOW:
+		$Weather/Snow.show()
+	if weather == G.weather.weather.RAIN:
+		$Weather/Rain.show()
+	if weather == G.weather.weather.STORM:
+		$Weather/Fog.show()
+		$Weather/Rain.show()
+	if weather == G.weather.weather.FOG:
+		$Weather/Fog.show()
+	if weather == G.weather.weather.CLEAR:
+		pass
+
 func save():
 	var save_dict = {
 		"name" : name,

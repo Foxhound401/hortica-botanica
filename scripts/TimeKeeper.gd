@@ -62,6 +62,9 @@ func get_hours_as_string():
 	output += t_str(get_hours()) + ":" + t_str(get_minutes())
 	return output
 
+func get_day_of_season():
+	return int(time_epoch / 1440.0) % 30 
+
 func get_season_as_string():
 	return season_names[get_season()]
 
@@ -82,4 +85,3 @@ func _process(delta):
 	if counter >= 1:
 		counter = 0
 		time_epoch += 1
-
