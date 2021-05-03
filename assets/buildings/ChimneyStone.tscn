@@ -27,11 +27,13 @@ color_ramp = SubResource( 2 )
 [node name="Chimney" type="Node2D"]
 
 [node name="Sprite" type="Sprite" parent="."]
+light_mask = 0
 texture = ExtResource( 2 )
 region_enabled = true
 region_rect = Rect2( 0, 72, 32, 48 )
 
 [node name="Particles2D" type="Particles2D" parent="."]
+light_mask = 0
 position = Vector2( -1, -15 )
 amount = 7
 lifetime = 3.0

@@ -490,6 +490,7 @@ texture = ExtResource( 3 )
 texture_scale = 0.6
 range_height = 50.0
 range_item_cull_mask = 3
+shadow_enabled = true
 shadow_filter = 1
 shadow_filter_smooth = 50.0
 __meta__ = {
