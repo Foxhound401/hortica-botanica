@@ -9,6 +9,7 @@ var random_wait = 120
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	current_weather = weather.CLEAR
+	print("---", current_weather)
 	#change_weather()
 
 func _process(delta):
@@ -87,3 +88,17 @@ func pick_next_weather():
 	if new_weather != current_weather:
 		current_weather = new_weather
 		change_weather()
+
+func save():
+	var save_dict = {
+		"name" : name,
+		"current_weather": current_weather,
+		"random_wait": random_wait
+	}
+	return save_dict
+
+func restore(data):
+	current_weather = data["current_weather"]
+	random_wait = data["random_wait"]
+	change_weather()
+	

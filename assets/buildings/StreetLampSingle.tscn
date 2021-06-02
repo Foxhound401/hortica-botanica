@@ -43,6 +43,7 @@ shape = SubResource( 1 )
 occluder = SubResource( 2 )
 
 [node name="LampDay" type="Sprite" parent="."]
+visible = false
 light_mask = -2147483646
 position = Vector2( 0, -35 )
 texture = ExtResource( 2 )
@@ -53,7 +54,6 @@ position = Vector2( 0, -35 )
 texture = ExtResource( 3 )
 
 [node name="LampDay2" type="Sprite" parent="Glow"]
-modulate = Color( 1, 1, 1, 0.818627 )
 light_mask = -2147483646
 material = SubResource( 3 )
 texture = ExtResource( 4 )

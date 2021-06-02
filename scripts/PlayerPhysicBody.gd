@@ -81,6 +81,7 @@ func set_weather(weather):
 	$Weather/Fog.hide()
 	$Weather/Rain.hide()
 	$Weather/Snow.hide()
+	$Weather/Sun.hide()
 
 	if weather == G.weather.weather.SNOW:
 		$Weather/Snow.show()
@@ -91,8 +92,11 @@ func set_weather(weather):
 		$Weather/Rain.show()
 	if weather == G.weather.weather.FOG:
 		$Weather/Fog.show()
+	if weather == G.weather.weather.SUN:
+		$Weather/Sun.show()
 	if weather == G.weather.weather.CLEAR:
 		pass
+		
 
 func save():
 	var save_dict = {

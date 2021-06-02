@@ -48,3 +48,7 @@ func _on_TimeFaster_pressed():
 
 func _on_TimeAddDay_pressed():
 	G.time.time_epoch += 720
+
+
+func _on_TimeAddDays_pressed():
+	G.time.time_epoch += 7200
