@@ -5,8 +5,8 @@ func _ready():
 
 func _on_character_enter(_body):
 	if i_delayed_activation:
-		G.ui.set_instructions(get_node("../").instructions, self)
 		i_is_inside = true
+		update_instructions()
 
 func _on_character_exit(_body):
 	if i_delayed_activation:
@@ -19,3 +19,7 @@ func _physics_process(_delta):
 			print("action trigged by: ", get_node("../").name)
 			get_node("../").action()
 			G.ui.reset_instructions(self)
+
+func update_instructions():
+	if i_is_inside:
+		G.ui.set_instructions(get_node("../").instructions, self)

@@ -17,18 +17,18 @@ func _ready():
 	if len(sign_text) > 12 and sign_icon != ICON.none:
 		print("WARNING Text too long for sign post: ", name)
 		print("WARNING [", sign_text, "] might not display properly")
-	get_node("SignInfo").hide()
-	get_node("SignInfo/Label").text = sign_text
-	get_node("SignInfo/ArrowRight").hide()
-	get_node("SignInfo/ArrowLeft").hide()
+	$SignInfo.hide()
+	$SignInfo/Label.text = sign_text
+	$SignInfo/ArrowRight.hide()
+	$SignInfo/ArrowLeft.hide()
 	if sign_icon == ICON.left:
-		get_node("SignInfo/ArrowLeft").show()
+		$SignInfo/ArrowLeft.show()
 	if sign_icon == ICON.right:
-		get_node("SignInfo/ArrowRight").show()
+		$SignInfo/ArrowRight.show()
 
 func action():
-	get_node("SignInfo").show()
+	$SignInfo.show()
 	yield(get_tree().create_timer(3), "timeout")
-	get_node("SignInfo").hide()
-	#get_node("Area2D").reset_cooldown()
+	$SignInfo.hide()
+	$Area2D.update_instructions()
 

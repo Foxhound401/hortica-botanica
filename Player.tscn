@@ -7,7 +7,7 @@
 [ext_resource path="res://scripts/GUI.gd" type="Script" id=5]
 [ext_resource path="res://assets/gfx/ambiance_blue.png" type="Texture" id=6]
 
-[sub_resource type="StyleBoxFlat" id=2]
+[sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.239216, 0.752941, 0.615686, 0.290196 )
 
 [node name="Player" type="Node" groups=[
@@ -40,10 +40,9 @@ scale = Vector2( 41, 23.5 )
 texture = ExtResource( 6 )
 
 [node name="TextInstructions" type="Label" parent="GUI"]
-visible = false
-margin_top = 344.0
+margin_top = 368.0
 margin_right = 640.0
-margin_bottom = 358.0
+margin_bottom = 382.0
 custom_fonts/font = ExtResource( 4 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Instruction for Player"
@@ -187,7 +186,7 @@ margin_left = 64.0
 margin_top = 5.0
 margin_right = 128.0
 margin_bottom = 13.0
-custom_styles/bg = SubResource( 2 )
+custom_styles/bg = SubResource( 1 )
 max_value = 1000.0
 value = 500.0
 percent_visible = false
