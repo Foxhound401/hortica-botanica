@@ -5,7 +5,7 @@ export (int) var speed = 100
 var velocity = Vector2()
 var is_moving
 var current_direction
-
+var stamina = 1000
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -76,6 +76,13 @@ func _physics_process(_delta):
 		$ItemBobbingAnimation.stop()
 		$AnimatedSprite.play(current_direction + "_idle")
 
+func _process(delta):
+	var stamina_drain_rate = 0.5
+	if is_moving:
+		stamina_drain_rate = 0.9
+	
+	stamina -= G.time.dspeed * stamina_drain_rate
+
 func set_weather(weather):
 	# Reset weather
 	$Weather/Fog.hide()
@@ -104,6 +111,7 @@ func save():
 		"current_direction": current_direction,
 		"posX": position.x,
 		"posY": position.y,
+		"stamina": stamina
 	}
 	return save_dict
 
@@ -111,3 +119,4 @@ func restore(data):
 	current_direction = data["current_direction"]
 	position.x = data["posX"]
 	position.y = data["posY"]
+	stamina = data["stamina"]

@@ -14,6 +14,7 @@ func _process(delta):
 		$DayLabel.text = G.time.get_day_as_string()
 		$SeasonLabel.text = G.time.get_season_as_string()
 		$WeatherLabel.text = G.weather.get_current_weather_as_string()
+		$StaminaLabel/ProgressBar.value = G.physical_player.stamina
 		refresh_time = 0
 
 func reset_instructions(modifier):
