@@ -89,7 +89,7 @@
 tile_set = SubResource( 1 )
 cell_size = Vector2( 32, 32 )
 format = 1
-tile_data = PoolIntArray( -327682, 0, 2097158, -327681, 0, 2097159, -262146, 0, 2162694, -262145, 0, 2162695, -196610, 0, 2162694, -196609, 0, 2162695 )
+tile_data = PoolIntArray( -327682, 0, 2097158, -327681, 0, 2097159, -262146, 0, 2162694, -262145, 0, 2162695, -327680, 0, 1179652, -196610, 0, 2162694, -196609, 0, 2162695, -262144, 0, 1179652 )
 
 [node name="DoorFrame2" type="TileMap" parent="SideEntrance"]
 tile_set = ExtResource( 1 )
